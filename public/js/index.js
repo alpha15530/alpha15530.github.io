@@ -1,1 +1,1 @@
-"use strict";window.onload=function(){alert("hoge")};
+"use strict";window.onload=function(){};

@@ -59,7 +59,7 @@ gulp.task('watch', function(cb) {
     gulp.watch([
         './dev/style/*.scss'
     ], [
-        'sass-compile'
+        'scss-compile'
     ]);
 });
 
