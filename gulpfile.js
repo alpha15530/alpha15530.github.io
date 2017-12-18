@@ -2,7 +2,6 @@ require('es6-promise').polyfill();
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var cleanCSS = require('gulp-clean-css');
 var babel = require('gulp-babel');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
@@ -23,7 +22,7 @@ gulp.task('clean:js', function() {
 
 gulp.task('scss-compile', function(cb) {
     pump([
-        gulp.src('./dev/style/style.scss'),
+        gulp.src('./dev/style/*.scss'),
         sass.sync({
             outputStyle: 'compressed'
         }).on('error', sass.logError),
@@ -37,7 +36,7 @@ gulp.task('babel', function(cb) {
         babel({
             "presets": ['es2015']
         }),
-        //uglify(),
+        uglify(),
         gulp.dest('./public/js/')
     ], cb);
 });
@@ -64,18 +63,10 @@ gulp.task('watch', function(cb) {
     ]);
 });
 
-gulp.task('default', [
-    'clean',
-    'build:css',
-    'build:js',
-]);
-
-gulp.task('dev', [
-    'compass'
-]);
-
-gulp.task('prod', [
-    'clean:dist',
-    'compass',
-    'babel'
-]);
+gulp.task('default', function() {
+    return runSequence(
+        'clean:public',
+        'build:css',
+        'build:js'
+    );
+});
