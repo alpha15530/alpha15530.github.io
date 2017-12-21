@@ -10,11 +10,20 @@ new Vue({
     },
     mounted: function() {
         var self = this;
+
+        document.onload = function(e) {
+            getPosition(self);
+        }
+
         document.onscroll = function(e) {
-            self.position = document.documentElement.scrollTop || document.body.scrollTop;
+            getPosition(self);
         }
     }
 });
+
+function getPosition(elm) {
+    elm.position = document.documentElement.scrollTop || document.body.scrollTop;
+}
 
 function scrollWindow(position, speed, animation) {
     $("html, body").animate({ scrollTop: position }, speed, animation);

@@ -4,11 +4,6 @@
  * スマホサイズCSS
  **/
 
-
-/*****
-* common
-******/
-
 html {
     font-size: 100%;
 }
@@ -109,6 +104,11 @@ nav {
     }
 }
 
+
+/*****************
+ * Content
+*/
+
 #page {
     padding-top: 50px;
 }
@@ -204,7 +204,6 @@ nav {
 }
 
 .blc-scroll-top {
-    //display: none;
     position: fixed;
     bottom: 30px;
     left: 50%;
