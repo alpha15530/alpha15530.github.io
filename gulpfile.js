@@ -30,6 +30,16 @@ gulp.task('scss-compile', function(cb) {
     ], cb);
 });
 
+gulp.task('babel:dev', function(cb) {
+    pump([
+        gulp.src('./dev/scripts/**/*.js'),
+        babel({
+            "presets": ['es2015']
+        }),
+        gulp.dest('./public/js/')
+    ], cb);
+});
+
 gulp.task('babel', function(cb) {
     pump([
         gulp.src('./dev/scripts/**/*.js'),
@@ -45,6 +55,13 @@ gulp.task('build:css', function() {
     return runSequence(
         'clean:css',
         'scss-compile'
+    );
+});
+
+gulp.task('build:dev-js', function() {
+    return runSequence(
+        'clean:js',
+        'babel:dev'
     );
 });
 
