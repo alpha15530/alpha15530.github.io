@@ -15,9 +15,9 @@
         <nav id="nav-sp">
             <div class="container">
                 <ul class="cf">
-                    <li><a href="#profile">自己紹介</a></li>
-                    <li><a href="#skill">スキル</a></li>
-                    <li><a href="#works">業務経歴</a></li>
+                    <li><a href="#profile" v-on:click="scrollToElement">自己紹介</a></li>
+                    <li><a href="#skill" v-on:click="scrollToElement">スキル</a></li>
+                    <li><a href="#works" v-on:click="scrollToElement">業務経歴</a></li>
                 </ul>
             </div>
         </nav>
@@ -27,9 +27,9 @@
                 <nav id="nav-pc">
                     <div class="container">
                         <ul class="cf">
-                            <li><a href="#profile">自己紹介</a></li>
-                            <li><a href="#skill">スキル</a></li>
-                            <li><a href="#works">業務経歴</a></li>
+                            <li><a href="#profile" v-on:click="scrollToElement">自己紹介</a></li>
+                            <li><a href="#skill" v-on:click="scrollToElement">スキル</a></li>
+                            <li><a href="#works" v-on:click="scrollToElement">業務経歴</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -369,7 +369,7 @@
         </div>
         <div class="blc-scroll-top container">
             <transition name="fade">
-                <div class="scroll-top" v-on:click="toTop" v-if="position > 300">
+                <div class="scroll-top" v-on:click="scrollToTop" v-if="position > 300">
                     <i class="fas fa-angle-double-up fa-3x"></i>
                 </div>
             </transition>

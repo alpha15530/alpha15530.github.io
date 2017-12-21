@@ -4,8 +4,18 @@ new Vue({
         position: 0,
     },
     methods: {
-        toTop: function() {
+        scrollToTop: function() {
             scrollWindow(0, 500, "swing");
+        },
+        scrollToElement: function(event) {
+            let href = event.srcElement.hash;
+            let target = document.getElementById(href.slice(1));
+            let bounds = target.getBoundingClientRect();
+            var html = document.documentElement;
+            var body = document.body;
+            var y = bounds.top + (body.scrollTop || html.scrollTop) - html.clientTop;
+
+            scrollWindow(y - 50, 500, "swing");
         }
     },
     mounted: function() {
