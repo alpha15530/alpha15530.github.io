@@ -1,28 +1,21 @@
-$(() => {
-
-    let speed = 500;
-    let animation = "swing";
-
-    $(window).scroll(function() {
-        let position = $(this).scrollTop();
-
-        if (300 < position) {
-            $('.blc-scroll-top').fadeIn();
-        } else {
-            $('.blc-scroll-top').fadeOut();
+new Vue({
+    el: "#page",
+    data: {
+        position: 0,
+    },
+    methods: {
+        toTop: function() {
+            scrollWindow(0, 500, "swing");
         }
-    });
-
-    $('a[href^="#"]').click(function() {
-        let href = $(this).attr("href");
-        let target = $(href == "#" || href == "" ? 'html' : href);
-        let position = target.offset().top - 50;
-        $("html, body").animate({ scrollTop: position }, speed, animation);
-        return false;
-    });
-
-    $('.scroll-top').click(function() {
-        $("html, body").animate({ scrollTop: 0 }, speed, animation);
-        return false;
-    });
+    },
+    mounted: function() {
+        var self = this;
+        document.onscroll = function(e) {
+            self.position = document.documentElement.scrollTop || document.body.scrollTop;
+        }
+    }
 });
+
+function scrollWindow(position, speed, animation) {
+    $("html, body").animate({ scrollTop: position }, speed, animation);
+}

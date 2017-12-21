@@ -42,6 +42,24 @@
 *************************/
     #main {
         margin-top: 0;
-        padding: 0px 0 50px 0;
+        padding: 30px 0 50px 0;
+        #content-wrapper {
+            #content {
+                section#skill {
+                    ul.ls-skill {
+                        display: flex;
+                        &>li {
+                            padding: 15px 15px;
+                            width: 33.3333333%;
+                            @include box-sizing(border-box);
+                            border-left: 1px solid #DDD;
+                            &:first-child {
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

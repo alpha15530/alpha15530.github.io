@@ -34,9 +34,9 @@ header {
     h1 {
         display: inline-block;
         padding: 10px;
-        font-family: Poppins sans-serif;
-        color: #FFF;
+        font-family: 'Poppins', sans-serif;
         font-size: 2rem;
+        color: white;
         text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
     }
 }
@@ -114,39 +114,75 @@ nav {
 }
 
 #main {
-    padding: 20px 0 50px 0;
+    padding: 30px 0 50px 0;
     #content-wrapper {
         #content {
             section {
+                margin-bottom: 60px;
                 padding: 0 15px;
                 h2 {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
+                    line-height: 3rem;
                     font-weight: normal;
-                    text-align: center;
+                    margin: 0 0 1.5rem 0;
+                    padding-left: 10px;
+                    border-left: 4px solid #DDD;
                 }
             }
             section#profile {}
+            section#skill {
+                ul.ls-skill {
+                    padding: 0;
+                    list-style: none;
+                    &>li {
+                        margin-bottom: 20px;
+                        p {
+                            font-size: 1.25rem;
+                            margin-bottom: 1rem;
+                        }
+                        ul {
+                            list-style: disc;
+                            padding-left: 30px;
+                        }
+                    }
+                }
+            }
             section#works {
                 .blc-work {
-                    margin-bottom: 30px;
-                    padding-bottom: 30px;
-                    border-bottom: 1px solid #DDD;
+                    margin: 30px 5px;
+                    padding: 10px;
+                    //border: 1px solid #DDD;
+                    border-radius: 4px;
+                    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
                     .term {
                         font-size: 0.85rem;
                     }
-                    .blc-arch {
+                    .blc-batch {
+                        margin-bottom: 20px;
                         ul {
                             padding-left: 0;
+                            margin: 5px 0px;
                             li {
                                 display: inline-block;
                                 font-size: .75rem;
-                                background: #BBDEFB;
+                                background: #A5D6A7;
                                 border-radius: 4px;
                                 padding: 5px;
-                                margin: 3px;
+                                margin: 3px 3px 3px 0px;
                                 white-space: nowrap;
-                                &:first-child {
-                                    margin-left: 0;
+                            }
+                        }
+                        &.phase {
+                            ul {
+                                li {
+                                    background: #A5D6A7;
+                                }
+                            }
+                        }
+                        &.arch {
+                            ul {
+                                li {
+                                    background: #BBDEFB;
                                 }
                             }
                         }
@@ -157,8 +193,18 @@ nav {
     }
 }
 
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0
+}
+
 .blc-scroll-top {
-    display: none;
+    //display: none;
     position: fixed;
     bottom: 30px;
     left: 50%;
