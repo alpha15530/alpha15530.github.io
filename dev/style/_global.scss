@@ -1,0 +1,46 @@
+@import "base";
+body {
+    color: $base-font-color;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-family: Verdana, "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
+}
+
+a {
+    &:link,
+    &:visited {
+        color: $link-color;
+        text-decoration: none;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+p {
+    margin: 0 0 1.5rem 0;
+}
+
+.attention {
+    color: #ff6666;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    @include box-sizing(border-box);
+}

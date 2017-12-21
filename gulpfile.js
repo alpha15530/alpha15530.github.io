@@ -36,7 +36,7 @@ gulp.task('babel', function(cb) {
         babel({
             "presets": ['es2015']
         }),
-        uglify(),
+        //uglify(),
         gulp.dest('./public/js/')
     ], cb);
 });
@@ -65,7 +65,6 @@ gulp.task('watch', function(cb) {
 
 gulp.task('default', function() {
     return runSequence(
-        'clean:public',
         'build:css',
         'build:js'
     );

@@ -1,0 +1,47 @@
+@import "base";
+@media screen and (min-width: $window-size-min-md) {
+    /*****
+* Global
+******/
+    html {
+        font-size: 100%;
+    }
+    /************************
+* Header
+*************************/
+    header {
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    /************************
+* GlobalNavi
+*************************/
+    nav {
+        &#nav-sp {
+            display: none;
+        }
+        &#nav-pc {
+            display: block;
+            position: relative;
+            background: none;
+        }
+        ul {
+            li {
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    #page {
+        padding: 0px;
+    }
+    /************************
+* Main
+*************************/
+    #main {
+        margin-top: 0;
+        padding: 0px 0 50px 0;
+    }
+}
